@@ -6,12 +6,6 @@ return {
 			icons = require("icons")
 		}
 	},
-
-	--  heirline [ui components]
-	--  https://github.com/rebelot/heirline.nvim
-	--  Use it to customize the components of your user interface,
-	--  Including tabline, winbar, statuscolumn, statusline.
-	--  Be aware some components are positional. Read heirline documentation.
 	{
 		"rebelot/heirline.nvim",
 		dependencies = { "zeioth/heirline-components.nvim" },
@@ -38,10 +32,10 @@ return {
 				winbar = false,
 				statuscolumn = { -- UI left column
 					init = function(self) self.bufnr = vim.api.nvim_get_current_buf() end,
-					lib.component.numbercolumn() ,
+					lib.component.numbercolumn(),
 					lib.component.signcolumn(),
 				} or nil,
-				statusline = {     -- UI statusbar
+				statusline = { -- UI statusbar
 					hl = { fg = "fg", bg = "bg" },
 					lib.component.mode(),
 					lib.component.git_branch(),
@@ -112,5 +106,15 @@ return {
 		config = function(_, opts)
 			require("ibl").setup(opts)
 		end
+	},
+	{
+		"iamcco/markdown-preview.nvim",
+		build = function() vim.fn["mkdp#util#install"]() end,
+		ft = { "markdown" },
+		cmd = {
+			"MarkdownPreview",
+			"MarkdownPreviewStop",
+			"MarkdownPreviewToggle",
+		},
 	},
 }

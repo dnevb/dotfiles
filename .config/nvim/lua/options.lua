@@ -4,6 +4,12 @@ vim.g.colorscheme = 'oxocarbon'
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 vim.g.big_file = { size = 1024 * 100, lines = 10000 }
+vim.g.is_windows = vim.fn.has('win32') == 1
+
+if vim.g.is_windows then
+	vim.opt.shell = "C:/Program Files/Git/bin/bash.exe"
+	vim.opt.shellcmdflag = '-s'
+end
 
 vim.opt.linebreak = true
 vim.opt.background = "dark"
