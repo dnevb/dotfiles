@@ -11,14 +11,18 @@
 		pkgs.zsh
 		pkgs.neovim
 		pkgs.go
+		pkgs.lazygit
   ];
 
   home.file = {
   };
 	xdg.configFile = {
-		"nvim" = {
-			source = config.lib.file.mkOutOfStoreSymlink ./.config/nvim;
-			recursive = true;
+		"nvim/lua" = {
+			source = config.lib.file.mkOutOfStoreSymlink ./.config/nvim/lua;
+		};
+		# lazy-lock.json write workaround
+		"nvim/init.lua" = {
+			source = config.lib.file.mkOutOfStoreSymlink ./.config/nvim/init.lua;
 		};
 		"kitty" = {
 			source = config.lib.file.mkOutOfStoreSymlink ./.config/kitty;
@@ -41,4 +45,16 @@
     enable = true;
     enableZshIntegration = true;
   };
+	programs.zsh = {
+		enable = true;
+		oh-my-zsh = {
+			enable = true;
+			plugins = [ "git" ];
+			theme = "fino";
+		};
+		enableVteIntegration = true;
+		enableCompletion = true;
+    autosuggestion.enable = true;
+    syntaxHighlighting.enable = true;
+	};
 }

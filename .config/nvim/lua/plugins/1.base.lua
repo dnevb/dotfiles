@@ -86,7 +86,6 @@ return {
       open_mapping = [[<F7>]],
       shading_factor = 2,
       direction = "float",
-			shell = "powershell.exe",
       float_opts = {
         border = "rounded",
         highlights = { border = "Normal", background = "Normal" },
