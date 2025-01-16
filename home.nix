@@ -10,6 +10,7 @@
 		pkgs.git
 		pkgs.zsh
 		pkgs.neovim
+		pkgs.helix
 		pkgs.go
 		pkgs.lazygit
   ];
@@ -17,17 +18,15 @@
   home.file = {
   };
 	xdg.configFile = {
-		"nvim/lua" = {
-			source = config.lib.file.mkOutOfStoreSymlink ./.config/nvim/lua;
-		};
-		# lazy-lock.json write workaround
-		"nvim/init.lua" = {
-			source = config.lib.file.mkOutOfStoreSymlink ./.config/nvim/init.lua;
-		};
-		"kitty" = {
-			source = config.lib.file.mkOutOfStoreSymlink ./.config/kitty;
-			recursive = true;
-		};
+		# "nvim/lua" = {
+		# 	source = ./.config/nvim/lua;
+		# };
+		# # lazy-lock.json write workaround
+		# "nvim/init.lua" = {
+		# 	source = ./.config/nvim/init.lua;
+		# };
+		"kitty".source = config.lib.file.mkOutOfStoreSymlink ./config/kitty;
+		# "helix".source = ./.config/helix;
 	};
 
   home.sessionVariables = {
@@ -44,6 +43,7 @@
   programs.fzf = {
     enable = true;
     enableZshIntegration = true;
+    # Specify the source of Home Manager and Nixpkgs.
   };
 	programs.zsh = {
 		enable = true;
@@ -54,7 +54,17 @@
 		};
 		enableVteIntegration = true;
 		enableCompletion = true;
-    autosuggestion.enable = true;
-    syntaxHighlighting.enable = true;
+	    	autosuggestion.enable = true;
+	    	syntaxHighlighting.enable = true;
+		initExtra = "PATH=$PATH:$HOME/.local/share/pnpm";
 	};
+	programs.ghostty = {
+		enable = true;
+	};
+	# programs.helix = {
+	# 	enable = true;
+	# 	settings = {
+	# 		theme = "rose_pine";
+	# 	};
+	# };
 }

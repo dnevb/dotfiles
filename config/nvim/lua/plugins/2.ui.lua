@@ -73,7 +73,12 @@ return {
 			update_cwd = true,
 			view = {
 				float = { enable = true },
-			}
+			},
+			filters = {
+				enable = true,
+				dotfiles = false,
+				git_ignored = false,
+			},
 		},
 		config = function(_, opts)
 			require("nvim-tree").setup(opts)
@@ -106,15 +111,5 @@ return {
 		config = function(_, opts)
 			require("ibl").setup(opts)
 		end
-	},
-	{
-		"iamcco/markdown-preview.nvim",
-		build = function() vim.fn["mkdp#util#install"]() end,
-		ft = { "markdown" },
-		cmd = {
-			"MarkdownPreview",
-			"MarkdownPreviewStop",
-			"MarkdownPreviewToggle",
-		},
 	},
 }
