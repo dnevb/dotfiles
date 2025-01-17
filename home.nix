@@ -7,7 +7,7 @@
   home.stateVersion = "24.11"; # Please read the comment before changing.
 
 	nixGL.packages = nixGL.packages;
-	nixGL.defaultWrapper = "mesa";
+
   home.packages = [
 		pkgs.git
 		pkgs.zsh
@@ -15,7 +15,6 @@
 		pkgs.helix
 		pkgs.go
 		pkgs.lazygit
-		pkgs.ghostty
 		pkgs.pnpm
   ];
 
@@ -32,7 +31,6 @@
   };
 
   programs.home-manager.enable = true;
-
 	programs.git = {
 		enable = true;
 		userName = "dvill";
@@ -47,8 +45,8 @@
 		plugins = [
       {
         name = "powerlevel10k-config";
-        src = "config/zsh";
-        file = "p10k.zsh";
+        src = config/zsh;
+        file = ".p10k.zsh";
       }
       {
         name = "zsh-powerlevel10k";
@@ -59,7 +57,6 @@
 		oh-my-zsh = {
 			enable = true;
 			plugins = [ "git" ];
-			theme = "fino";
 		};
 		enableVteIntegration = true;
 		enableCompletion = true;
@@ -67,7 +64,16 @@
 		syntaxHighlighting.enable = true;
 	};
 	programs.ghostty = {
-		enable = false;
+		enable = true;
 		package = (config.lib.nixGL.wrap pkgs.ghostty);
+		settings = {
+			theme = "Oxocarbon";
+			font-family = "Hack Nerd Font Regular";
+			font-size = 13;
+		};
+	};
+	programs.tmux = {
+		enable = true;
+		extraConfig = builtins.readFile ./config/tmux/tmux.conf;
 	};
 }
