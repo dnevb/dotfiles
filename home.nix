@@ -28,6 +28,7 @@
 
   home.sessionVariables = {
     EDITOR = "hx";
+		ZSH_TMUX_AUTOSTART = "true";
   };
 
   programs.home-manager.enable = true;
@@ -56,7 +57,7 @@
 		];
 		oh-my-zsh = {
 			enable = true;
-			plugins = [ "git" ];
+			plugins = [ "git" "tmux"];
 		};
 		enableVteIntegration = true;
 		enableCompletion = true;
@@ -74,6 +75,9 @@
 	};
 	programs.tmux = {
 		enable = true;
+		escapeTime = 0;
+    terminal = "tmux-256color";
+		shell = "${pkgs.zsh}/bin/zsh";
 		extraConfig = builtins.readFile ./config/tmux/tmux.conf;
 	};
 }
