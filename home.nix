@@ -1,4 +1,4 @@
-{ config, pkgs, self, ... }:
+{ config, pkgs, self, nixGL, ... }:
 
 {
   home.username = "dvill";
@@ -6,6 +6,8 @@
 
   home.stateVersion = "24.11"; # Please read the comment before changing.
 
+	nixGL.packages = nixGL.packages;
+	nixGL.defaultWrapper = "mesa";
   home.packages = [
 		pkgs.git
 		pkgs.zsh
@@ -13,24 +15,20 @@
 		pkgs.helix
 		pkgs.go
 		pkgs.lazygit
+		pkgs.ghostty
+		pkgs.pnpm
   ];
 
-  home.file = {
-  };
+  home.file = {};
 	xdg.configFile = {
-		# "nvim/lua" = {
-		# 	source = ./.config/nvim/lua;
-		# };
-		# # lazy-lock.json write workaround
-		# "nvim/init.lua" = {
-		# 	source = ./.config/nvim/init.lua;
-		# };
+		"nvim/lua".source = config.lib.file.mkOutOfStoreSymlink ./config/nvim/lua;
+		"nvim/init.lua".source = config.lib.file.mkOutOfStoreSymlink ./config/nvim/init.lua;
 		"kitty".source = config.lib.file.mkOutOfStoreSymlink ./config/kitty;
-		# "helix".source = ./.config/helix;
+		"helix".source = config.lib.file.mkOutOfStoreSymlink ./config/helix;
 	};
 
   home.sessionVariables = {
-    EDITOR = "nvim";
+    EDITOR = "hx";
   };
 
   programs.home-manager.enable = true;
@@ -43,10 +41,21 @@
   programs.fzf = {
     enable = true;
     enableZshIntegration = true;
-    # Specify the source of Home Manager and Nixpkgs.
   };
 	programs.zsh = {
 		enable = true;
+		plugins = [
+      {
+        name = "powerlevel10k-config";
+        src = "config/zsh";
+        file = "p10k.zsh";
+      }
+      {
+        name = "zsh-powerlevel10k";
+        src = "${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/";
+        file = "powerlevel10k.zsh-theme";
+      }
+		];
 		oh-my-zsh = {
 			enable = true;
 			plugins = [ "git" ];
@@ -54,17 +63,11 @@
 		};
 		enableVteIntegration = true;
 		enableCompletion = true;
-	    	autosuggestion.enable = true;
-	    	syntaxHighlighting.enable = true;
-		initExtra = "PATH=$PATH:$HOME/.local/share/pnpm";
+		autosuggestion.enable = true;
+		syntaxHighlighting.enable = true;
 	};
 	programs.ghostty = {
-		enable = true;
+		enable = false;
+		package = (config.lib.nixGL.wrap pkgs.ghostty);
 	};
-	# programs.helix = {
-	# 	enable = true;
-	# 	settings = {
-	# 		theme = "rose_pine";
-	# 	};
-	# };
 }

@@ -1,9 +1,9 @@
-theme = "rose-pine"
+theme = "rose_pine"
 
 [editor]
 line-number = "relative"
 bufferline = "always"
-scroll-lines = "2"
+scroll-lines = 2
 soft-wrap.enable = true
 file-picker.hidden = false
 
@@ -17,12 +17,15 @@ character = "▏"
 skip-levels = 1
 
 [editor.statusline]
-left = ["mode", "spinner", "file-name", "version-control", "file-modification-indicator"]
+left = ["mode", "spinner", "version-control", "file-name", "file-modification-indicator"]
 
 [keys.normal]
-gc = "toggle_comments"
+ret = "goto_word"
+tab = ":bn"
+S-tab = ":bp"
 
 [keys.normal.space]
 w = ":write"
-q = ":quit-all"
+q = ":qa"
+x = ":bc"
 
