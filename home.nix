@@ -15,7 +15,6 @@
 		pkgs.helix
 		pkgs.go
 		pkgs.lazygit
-		pkgs.pnpm
   ];
 
   home.file = {};
@@ -63,6 +62,7 @@
 		enableCompletion = true;
 		autosuggestion.enable = true;
 		syntaxHighlighting.enable = true;
+		initExtra = builtins.readFile ./config/zsh/zshrc;
 	};
 	programs.ghostty = {
 		enable = true;
