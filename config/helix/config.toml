@@ -5,7 +5,6 @@ line-number = "relative"
 bufferline = "always"
 scroll-lines = 2
 soft-wrap.enable = true
-file-picker.hidden = false
 
 [editor.cursor-shape]
 insert = "bar"

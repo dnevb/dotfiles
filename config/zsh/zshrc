@@ -1,1 +1,2 @@
 PATH=$PATH:$HOME/.bun/bin
+eval "$(direnv hook zsh)"

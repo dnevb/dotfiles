@@ -1,4 +1,4 @@
-{ config, pkgs, self, nixGL, ... }:
+{ config, pkgs, nixGL, ... }:
 
 {
   home.username = "dvill";
@@ -15,6 +15,8 @@
 		pkgs.helix
 		pkgs.go
 		pkgs.lazygit
+		pkgs.nil
+		pkgs.direnv
   ];
 
   home.file = {};
@@ -76,8 +78,20 @@
 	programs.tmux = {
 		enable = true;
 		escapeTime = 0;
+		baseIndex = 1;
+		disableConfirmationPrompt = true;
+		prefix = "C-space";
     terminal = "tmux-256color";
 		shell = "${pkgs.zsh}/bin/zsh";
 		extraConfig = builtins.readFile ./config/tmux/tmux.conf;
+		keyMode = "vi";
+		mouse = true;
+		sensibleOnTop = true;
+		customPaneNavigationAndResize = true;
+		plugins = [
+			{
+				plugin = pkgs.tmuxPlugins.vim-tmux-navigator;
+			}
+		];
 	};
 }
