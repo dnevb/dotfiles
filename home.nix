@@ -66,14 +66,10 @@
 		syntaxHighlighting.enable = true;
 		initExtra = builtins.readFile ./config/zsh/zshrc;
 	};
-	programs.ghostty = {
+	programs.alacritty = {
 		enable = true;
-		package = (config.lib.nixGL.wrap pkgs.ghostty);
-		settings = {
-			theme = "Oxocarbon";
-			font-family = "Hack Nerd Font Regular";
-			font-size = 13;
-		};
+		package = (config.lib.nixGL.wrap pkgs.alacritty);
+		settings = builtins.fromTOML (builtins.readFile ./config/alacritty/alacritty.toml);
 	};
 	programs.tmux = {
 		enable = true;
