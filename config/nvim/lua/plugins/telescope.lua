@@ -26,7 +26,11 @@ return {
           ["<ESC>"] = actions.close,
           ["<C-c>"] = false,
         },
-        n = { ["q"] = actions.close },
+        n = {
+					["q"] = actions.close,
+          ["<Tab>"] = actions.move_selection_next,
+          ["<S-Tab>"] = actions.move_selection_previous,
+				},
       }
       return {
         defaults = {

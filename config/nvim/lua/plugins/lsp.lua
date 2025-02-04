@@ -126,7 +126,7 @@ return {
 					["<Down>"] = cmp.mapping.select_next_item {
 						behavior = cmp.SelectBehavior.Select,
 					},
-					['<C-Space>'] = cmp.mapping.complete(),
+					['<C-x>'] = cmp.mapping.complete(),
 					['<C-u>'] = cmp.mapping.scroll_docs(-4),
 					['<C-d>'] = cmp.mapping.scroll_docs(4),
 					["<CR>"] = cmp.mapping.confirm { select = false },
@@ -211,6 +211,7 @@ return {
 					local opts = { buffer = event.buf }
 
 					vim.keymap.set('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>', opts)
+					vim.keymap.set('n', '<leader>k', '<cmd>lua vim.lsp.buf.hover()<cr>', opts)
 					vim.keymap.set('n', 'gd', '<cmd>Telescope lsp_definitions<cr>', opts)
 					vim.keymap.set('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<cr>', opts)
 					vim.keymap.set('n', 'gi', '<cmd>Telescope lsp_implementations<cr>', opts)
@@ -220,9 +221,21 @@ return {
 					vim.keymap.set('n', '<F2>', '<cmd>lua vim.lsp.buf.rename()<cr>', opts)
 					vim.keymap.set({ 'n', 'x' }, '<F3>', '<cmd>lua vim.lsp.buf.format({async = true})<cr>', opts)
 					vim.keymap.set('n', '<F4>', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
+					vim.keymap.set('n', '<leader>a', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
 				end,
 			})
 
+			-- require'lspconfig'.svelte.setup{
+			-- 	cmd = { "bunx","svelteserver", "--stdio" }
+			-- }
+			-- require'lspconfig'.ts_ls.setup{
+			-- 	cmd = { "bunx","typescript-language-server", "--stdio" }
+			-- }
+			-- require'lspconfig'.yamlls.setup{
+			-- 	cmd = { "bunx","yaml-language-server", "--stdio" }
+			-- }
+			-- require'lspconfig'.gopls.setup{}
+			-- require'lspconfig'.nil_ls.setup{}
 			require('mason-lspconfig').setup({
 				ensure_installed = {},
 				handlers = {

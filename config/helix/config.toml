@@ -5,6 +5,7 @@ line-number = "relative"
 bufferline = "always"
 scroll-lines = 2
 soft-wrap.enable = true
+file-picker.hidden = false
 
 [editor.cursor-shape]
 insert = "bar"
@@ -27,4 +28,5 @@ S-tab = ":bp"
 w = ":write"
 q = ":qa"
 x = ":bc"
-
+f = "file_picker_in_current_directory"
+F = "file_picker_in_current_buffer_directory"

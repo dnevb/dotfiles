@@ -14,6 +14,7 @@
 		pkgs.neovim
 		pkgs.helix
 		pkgs.go
+		pkgs.cargo
 		pkgs.lazygit
 		pkgs.nil
 		pkgs.direnv

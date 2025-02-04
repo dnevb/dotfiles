@@ -5,6 +5,10 @@ for _, mode in ipairs {
 local utils = require('utils')
 
 -- standard Operations -----------------------------------------------------
+maps.n['ge'] = {"G"}
+maps.n['gl'] = {"$"}
+maps.n['gh'] = {"0"}
+maps.n['mm'] = {"%"}
 maps.n["<leader>e"] = { "<cmd>NvimTreeFocus<cr>", desc = "File explorer" }
 maps.n["<leader>w"] = { "<cmd>w<cr>", desc = "Save" }
 maps.n["<leader>W"] =
