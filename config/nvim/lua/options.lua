@@ -1,6 +1,6 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
-vim.g.colorscheme = 'oxocarbon'
+vim.g.colorscheme = 'blue-moon'
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 vim.g.big_file = { size = 1024 * 100, lines = 10000 }
@@ -11,6 +11,7 @@ if vim.g.is_windows then
 	vim.opt.shellcmdflag = '-s'
 end
 
+vim.opt.scrolloff = 3
 vim.opt.linebreak = true
 vim.opt.background = "dark"
 vim.opt.signcolumn = "yes"

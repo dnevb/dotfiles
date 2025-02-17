@@ -5,17 +5,10 @@ for _, mode in ipairs {
 local utils = require('utils')
 
 -- standard Operations -----------------------------------------------------
-maps.n['ge'] = {"G"}
-maps.n['gl'] = {"$"}
-maps.n['gh'] = {"0"}
-maps.n['mm'] = {"%"}
 maps.n["<leader>e"] = { "<cmd>NvimTreeFocus<cr>", desc = "File explorer" }
 maps.n["<leader>w"] = { "<cmd>w<cr>", desc = "Save" }
 maps.n["<leader>W"] =
 { function() vim.cmd("SudaWrite") end, desc = "Save as sudo" }
-maps.n["<leader>n"] = { "<cmd>enew<cr>", desc = "New file" }
-maps.n["<Leader>/"] = { "gcc", remap = true, desc = "Toggle comment line" }
-maps.x["<Leader>/"] = { "gc", remap = true, desc = "Toggle comment" }
 maps.n["<C-s>"] = { "<cmd>w!<cr>", desc = "Force write" }
 maps.n["|"] = { "<cmd>vsplit<cr>", desc = "Vertical Split" }
 maps.n["\\"] = { "<cmd>split<cr>", desc = "Horizontal Split" }
@@ -140,7 +133,7 @@ maps.n["<leader>gg"] = {
 	function()
 		local git_dir = vim.fn.finddir(".git", vim.fn.getcwd() .. ";")
 		if git_dir ~= "" then
-			vim.cmd("TermExec cmd='lazygit && exit'")
+			vim.cmd("TermExec name='lazygit' cmd='lazygit && exit'")
 		else
 			utils.notify("Not a git repository", vim.log.levels.WARN)
 		end
@@ -274,6 +267,14 @@ maps.n["<leader>f/"] = {
 	function() require("telescope.builtin").current_buffer_fuzzy_find() end,
 	desc = "Find words in current buffer"
 }
+maps.n["<leader>fs"] = {
+	function() require("telescope.builtin").lsp_document_symbols() end,
+	desc = "Find symbols in current buffer"
+}
+maps.n["<leader>fS"] = {
+	function() require("telescope.builtin").lsp_workspace_symbols() end,
+	desc = "Find symbols in current workspace"
+}
 
 -- hop.nvim ----------------------------------------------------------------
 maps.n["<C-m>"] = {   -- The terminal undersand C-m and ENTER as the same key.
@@ -302,7 +303,7 @@ maps.n["<leader>tv"] = {
 	"<cmd>ToggleTerm size=80 direction=vertical<cr>",
 	desc = "Toggleterm vertical split",
 }
-maps.n["<F7>"] = { "<cmd>ToggleTerm<cr>", desc = "terminal" }
+maps.n["<F7>"] = { "<cmd>ToggleTerm name='general'<cr>", desc = "terminal" }
 maps.t["<F7>"] = maps.n["<F7>"]
 maps.n["<C-'>"] = maps.n["<F7>"] -- requires terminal that supports binding <C-'>
 maps.t["<C-'>"] = maps.n["<F7>"] -- requires terminal that supports binding <C-'>

@@ -1,4 +1,5 @@
 return {
+	{ "kyazdani42/blue-moon" },
 	{ "nyoom-engineering/oxocarbon.nvim" },
 	{
 		"zeioth/heirline-components.nvim",
@@ -47,8 +48,6 @@ return {
 					lib.component.fill(),
 					lib.component.file_info({ filename = {}, filetype = false }),
 					lib.component.file_encoding({ file_format = false }),
-					-- lib.component.compiler_state(),
-					-- lib.component.virtual_env(),
 					lib.component.nav(),
 					lib.component.mode { surround = { separator = "right" } },
 
@@ -71,6 +70,12 @@ return {
 		dependencies = { "nvim-tree/nvim-web-devicons" },
 		opts = {
 			update_cwd = true,
+			update_focused_file = {
+				enable = true,
+				update_root = {
+					enable = true,
+				}
+			},
 			view = {
 				float = { enable = true },
 			},
@@ -107,7 +112,19 @@ return {
 		"lukas-reineke/indent-blankline.nvim",
 		main = "ibl",
 		event = { "BufReadPre", "BufNewFile" },
-		opts = {},
+		opts = {
+			indent = {
+				highlight = { "CursorColumn",
+					"Whitespace", },
+				char = ""
+			},
+			whitespace = {
+				highlight = { "CursorColumn",
+					"Whitespace", },
+				remove_blankline_trail = false,
+			},
+			scope = { enabled = false },
+		},
 		config = function(_, opts)
 			require("ibl").setup(opts)
 		end
