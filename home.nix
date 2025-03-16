@@ -14,6 +14,7 @@
 		pkgs.neovim
 		pkgs.helix
 		pkgs.go
+		pkgs.nodejs_23
 		pkgs.cargo
 		pkgs.lazygit
 		pkgs.nil
@@ -45,6 +46,10 @@
   };
 	programs.zsh = {
 		enable = true;
+		shellAliases = {
+			lg = "lazygit";
+			please = "sudo";
+		};
 		plugins = [
       {
         name = "powerlevel10k-config";
@@ -59,7 +64,7 @@
 		];
 		oh-my-zsh = {
 			enable = true;
-			plugins = [ "git" "tmux"];
+			plugins = [ "git" "tmux" "kubectl" "docker-compose" "last-working-dir"];
 		};
 		enableVteIntegration = true;
 		enableCompletion = true;
