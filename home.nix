@@ -17,8 +17,8 @@
 		pkgs.nodejs_23
 		pkgs.cargo
 		pkgs.lazygit
-		pkgs.nil
 		pkgs.direnv
+		pkgs.ranger
   ];
 
   home.file = {};
@@ -27,6 +27,7 @@
 		"nvim/init.lua".source = config.lib.file.mkOutOfStoreSymlink ./config/nvim/init.lua;
 		"kitty".source = config.lib.file.mkOutOfStoreSymlink ./config/kitty;
 		"helix".source = config.lib.file.mkOutOfStoreSymlink ./config/helix;
+		"niri".source = config.lib.file.mkOutOfStoreSymlink ./config/niri;
 	};
 
   home.sessionVariables = {
@@ -64,7 +65,7 @@
 		];
 		oh-my-zsh = {
 			enable = true;
-			plugins = [ "git" "tmux" "kubectl" "docker-compose" "last-working-dir"];
+			plugins = [ "git" "dnf" "kubectl" "docker-compose" "last-working-dir" "direnv"];
 		};
 		enableVteIntegration = true;
 		enableCompletion = true;
@@ -78,7 +79,7 @@
 		settings = builtins.fromTOML (builtins.readFile ./config/alacritty/alacritty.toml);
 	};
 	programs.tmux = {
-		enable = true;
+		enable = false;
 		escapeTime = 0;
 		baseIndex = 1;
 		disableConfirmationPrompt = true;
