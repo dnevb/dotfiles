@@ -18,7 +18,7 @@
 		pkgs.cargo
 		pkgs.lazygit
 		pkgs.direnv
-		pkgs.ranger
+		pkgs.yazi
   ];
 
   home.file = {};
@@ -28,6 +28,8 @@
 		"kitty".source = config.lib.file.mkOutOfStoreSymlink ./config/kitty;
 		"helix".source = config.lib.file.mkOutOfStoreSymlink ./config/helix;
 		"niri".source = config.lib.file.mkOutOfStoreSymlink ./config/niri;
+		"waybar".source = config.lib.file.mkOutOfStoreSymlink ./config/waybar;
+		"ghostty".source = config.lib.file.mkOutOfStoreSymlink ./config/ghostty;
 	};
 
   home.sessionVariables = {
@@ -77,6 +79,10 @@
 		enable = true;
 		package = (config.lib.nixGL.wrap pkgs.alacritty);
 		settings = builtins.fromTOML (builtins.readFile ./config/alacritty/alacritty.toml);
+	};
+	programs.ghostty = {
+		enable = true;
+		package = (config.lib.nixGL.wrap pkgs.ghostty);
 	};
 	programs.tmux = {
 		enable = false;
