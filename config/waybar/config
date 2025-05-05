@@ -1,155 +1,117 @@
 {
-    "layer": "top",
+//    "layer": "top",
     "position": "top",
-    "height": 35,
-    "margin-top": 10,
-    "margin-bottom":5,
-    "margin-left": 10,
-    "margin-right": 10,
+    "spacing": 0,
+    "margin-top": 0,
+    "margin-left": 0,
+    "margin-right": 0,
 
-    // Choose the order of the modules
+    "modules-left": [
+        "sway/workspaces"
+    ],
 
-    "modules-left":["custom/launcher", "wlr/taskbar"],
-    "modules-right":["mpris",  "idle_inhibitor", "pulseaudio", "cpu", "memory", "backlight", "keyboard-state", "network", "tray", "clock", "custom/power"],
+    "modules-center": [
+        "clock"
+    ],
 
-    // Modules configuration
-    "mpris": {
-        "format": "{player_icon} {dynamic}",
-        "format-paused": "{status_icon} {dynamic}",
-        "on-scroll-up": "playerctl next",
-        "on-scroll-down": "playerctl previous",
-        "player-icons": {
-          "default": "",
-           "spotify": " ",
-           "mpv": "🎵"
-        },
-        "status-icons": {
-          "paused": "󰏤"
-        }
-    },
+    "modules-right": [
+        "tray",
+        "network",
+        "pulseaudio",
+    ],
+
     "wlr/taskbar": {
         "format": "{icon}",
-        "icon-size": 20,
-        "icon-theme": "Star",
-        "tooltip-format": "{title}",
         "on-click": "activate",
-        "on-click-middle": "close",
-        "on-click-right": "minimize"
+        "on-click-right": "fullscreen",
+        "icon-theme": "WhiteSur",
+        "icon-size": 25,
+        "tooltip-format": "{title}"
     },
-    "keyboard-state": {
-        "numlock": true,
-        "capslock": true,
-        "format": " {name} {icon}",
-        "format-icons": {
-            "locked": "",
-            "unlocked": ""
-        }
-    },
-   "sway/language": {
-    "format": " {}",
-    },
-    "idle_inhibitor": {
+
+    "sway/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
         "format": "{icon}",
         "format-icons": {
-            "activated": "",
-            "deactivated": ""
+            "1": "",
+            "2": "",
+            "3": "",
+            "9": "",
+            "10": "",
+        },
+        "persistent-workspaces": {
+            "1": [],
+            "2": [],
+            "9": [],
+            "10": [],
         }
     },
+
     "tray": {
-        "icon-size": 20,
         "spacing": 10
     },
+
     "clock": {
-        "interval": 60,
-        "align": 0,
-        "rotate": 0,
-        "format": "{:%d %b <span rise='1000'> </span> %I:%M %p}",
-        "format-alt": "{:%A <span rise='1000'> </span> %d %B %Y <span rise='1000'> </span> %I:%M %p}",
-        "tooltip-format": "<tt><small>{calendar}</small></tt>",
-        "calendar": {
-          "mode": "year",
-          "mode-mon-col": 3,
-          "weeks-pos": "right",
-          "on-scroll": 1,
-          "format": {
-            "months": "<span color='#ffead3'><b>{}</b></span>",
-            "days": "<span color='#ecc6d9'><b>{}</b></span>",
-            "weeks": "<span color='#99ffdd'><b>W{}</b></span>",
-            "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
-            "today": "<span color='#ff6699'><b><u>{}</u></b></span>"
-          }
-        }
+        "format": "{:%I:%M %p - %a, %d %b %Y}"
     },
-    "cpu": {
-        "format": "{usage}% ",
-        "tooltip": false
-    },
-    "memory": {
-        "format": "{}% "
-    },
-    "temperature": {
-        "critical-threshold": 80,
-        "format": "{temperatureC}°C",
-        "format-icons": ["", "", ""]
-    },
-    "backlight": {
-        "format": "{percent}% {icon}",
-        "format-icons": ["", ""]
-    },
-    "battery": {
-        "states": {
-            // "good": 95,
-            "warning": 30,
-            "critical": 15
-        },
-        "format": "{capacity}% {icon}",
-        "format-charging": "{capacity}% ",
-        "format-plugged": "{capacity}% ",
-        "format-alt": "{time} {icon}",
-        // "format-good": "", // An empty format will hide the module
-        // "format-full": "",
-        "format-icons": ["", "", "", "", ""]
-    },
-    "battery#bat2": {
-        "bat": "BAT2"
-    },
+    
     "network": {
-        "format-wifi": "  {essid}",
-        "format-ethernet": "  Ethernet",
-        "format-disconnected": "⚠ Disconnected",
-        "tooltip": true,
-        "tooltip-format": "{ifname} via {gwaddr}",
-        "tooltip-format-wifi": "{ipaddr} : {signalStrength}%",
-        "tooltip-format-ethernet": "{ipaddr} : {bandwidthTotalBytes}",
-        "on-click": "alacritty -e nmtui"
+        "format-wifi" : "{icon}",
+        "format-icons": ["󰤯","󰤟","󰤢","󰤥","󰤨"],
+        "format-ethernet": "",
+        "format-disconnected" : "󰤮",
+	      "interval": 5,
     },
+
     "pulseaudio": {
-        // "scroll-step": 1, // %, can be a float
-        "format": "{volume}% {icon}",
-        "format-bluetooth": "{volume}% {icon}",
-        "format-bluetooth-muted": "{icon} {format_source}",
-        "format-muted": "{format_source}",
-        "format-source": "",
-        "format-source-muted": "",
+        "scroll-step": 5,
+        "max-volume": 150,
+        "format": "{icon} {volume}%",
+        "format-bluetooth": "󰂰",
+        "nospacing": 1,
+        "format-muted": "󰝟",
         "format-icons": {
             "headphone": "",
-            "hands-free": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": ["", "", ""]
+            "default": ["","" ," "]
         },
-        "on-click": "pavucontrol"
+        "on-click": "pamixer -t",
     },
-    "custom/launcher":{
-        "format": "",
-        "on-click": "fuzzel",
-        "on-click-right": "killall fuzzel"
+
+    "battery": {
+        "format": "{icon} {capacity}%",
+        "format-icons": {
+            "charging": [
+                "󰢜",
+                "󰂆",
+                "󰂇",
+                "󰂈",
+                "󰢝",
+                "󰂉",
+                "󰢞",
+                "󰂊",
+                "󰂋",
+                "󰂅"
+            ],
+            "default": [
+                "󰁺",
+                "󰁻",
+                "󰁼",
+                "󰁽",
+                "󰁾",
+                "󰁿",
+                "󰂀",
+                "󰂁",
+                "󰂂",
+                "󰁹"
+            ]
+        },
+        "format-full": "Charged ",
+        "interval": 5,
+        "states": {
+            "warning": 20,
+            "critical": 10
+        },
+        "tooltip": false
     },
-    "custom/power":{
-        "format": "  ",
-        "on-click": "nwg-bar",
-        "on-click-right": "killall nwg-bar"
-    }
 }

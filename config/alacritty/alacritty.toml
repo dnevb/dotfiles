@@ -4,30 +4,16 @@ size=12
 family="Hack Nerd Font"
 style="Mono"
 
-[colors.primary]
-background = "#161616"
-foreground = "#ffffff"
-
-[colors.search.matches]
-foreground = "CellBackground"
-background = "#ee5396"
-
 [colors.normal]
-black = "#262626"
-magenta = "#ff7eb6"
-green = "#42be65"
-yellow = "#ffe97b"
-blue = "#33b1ff"
-red = "#ee5396"
-cyan = "#3ddbd9"
-white = "#dde1e6"
+black   = "0x050505"
+blue    = "0x0077b6"
+cyan    = "0x219ebc"
+green   = "0x97a97c"
+magenta = "0x9fa0ff"
+red     = "0xd08c60"
+white   = "0xe6ccb2"
+yellow  = "0xffcb70"
 
-[colors.bright]
-black = "#393939"
-magenta = "#ff7eb6"
-green = "#42be65"
-yellow = "#ffe97b"
-blue = "#33b1ff"
-red = "#ee5396"
-cyan = "#3ddbd9"
-white = "#ffffff"
+[colors.primary]
+background = "0x050505"
+foreground = "#ffffff"

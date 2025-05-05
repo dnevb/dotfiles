@@ -9,8 +9,7 @@ on-notify=exec mpv /usr/share/sounds/freedesktop/stereo/message.oga
 
 font= monospace 10
 
-# background color of notification( #RRGGBB | #RRGGBBAA )
-background-color=#000000
+background-color=#050505
 
 # Text color inside the notification( #RRGGBB | #RRGGBBAA )
 text-color=#FFFFFF
@@ -24,16 +23,16 @@ height=99
 # margin of notification which is margin for the list of notification block( value in px ).
 outer-margin=1
 # Margin of each individual notification
-margin=0
+margin=10
 
 # Set padding on each side to the size specified by directional( value in px )
-padding=10
+padding=5
 
 #Set popup border size to px pixels.(value in px )
 border-size=1
 
 # color of border of each notification( #RRGGBB | #RRGGBBAA )
-border-color=#FFFFFF
+border-color=#454545
 
 # bordear radious of each notification(value in px )
 border-radius=0

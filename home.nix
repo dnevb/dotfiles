@@ -32,6 +32,7 @@
 		"ghostty".source = config.lib.file.mkOutOfStoreSymlink ./config/ghostty;
 		"sway".source = config.lib.file.mkOutOfStoreSymlink ./config/sway;
 		"mako".source = config.lib.file.mkOutOfStoreSymlink ./config/mako;
+		"wallpapers".source = config.lib.file.mkOutOfStoreSymlink ./wallpapers;
 	};
 
   home.sessionVariables = {
