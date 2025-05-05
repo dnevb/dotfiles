@@ -204,3 +204,6 @@ binds {
     Mod+Shift+P { power-off-monitors; }
 }
 
+environment {
+    DISPLAY ":1"
+}

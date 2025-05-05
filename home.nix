@@ -30,6 +30,8 @@
 		"niri".source = config.lib.file.mkOutOfStoreSymlink ./config/niri;
 		"waybar".source = config.lib.file.mkOutOfStoreSymlink ./config/waybar;
 		"ghostty".source = config.lib.file.mkOutOfStoreSymlink ./config/ghostty;
+		"sway".source = config.lib.file.mkOutOfStoreSymlink ./config/sway;
+		"mako".source = config.lib.file.mkOutOfStoreSymlink ./config/mako;
 	};
 
   home.sessionVariables = {
@@ -73,7 +75,7 @@
 		enableCompletion = true;
 		autosuggestion.enable = true;
 		syntaxHighlighting.enable = true;
-		initExtra = builtins.readFile ./config/zsh/zshrc;
+		initContent= builtins.readFile ./config/zsh/zshrc;
 	};
 	programs.alacritty = {
 		enable = true;

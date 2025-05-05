@@ -1,0 +1,39 @@
+[language-server.gpt]
+command = "helix-gpt"
+args = ["--handler", "codeium"]
+
+[[language]]
+name = "typescript"
+language-servers = [
+  "typescript-language-server",
+  "gpt"
+]
+[[language]]
+name = "tsx"
+language-servers = [
+  "typescript-language-server",
+  "gpt"
+]
+
+[[language]]
+name = "go"
+language-servers = [
+  "gopls",
+  "golangci-lint-langserver",
+  "gpt"
+]
+
+[[language]]
+name = "protobuf"
+language-servers = [
+  "bufls",
+  "pb",
+  "gpt"
+]
+
+[[language]]
+name = "toml"
+language-servers = [
+  "taplo",
+  "gpt"
+]

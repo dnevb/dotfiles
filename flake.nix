@@ -8,17 +8,13 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    yazi = {
-      url = "github:sxyazi/yazi";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     helix = {
       url = "github:helix-editor/helix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = { nixpkgs, home-manager, yazi, helix, nixGL, ... }:
+  outputs = { nixpkgs, home-manager, helix, nixGL, ... }:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
@@ -26,7 +22,6 @@
         overlays = [
           nixGL.overlay
           (final: prev: {
-            yazi = yazi.packages.${system}.default;
             helix = helix.packages.${system}.default;
           }) 
         ];

@@ -177,6 +177,8 @@ label:focus {
   border-radius: 20px;
   margin-right: 5px;
   margin-left: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
 #custom-media.custom-spotify {
