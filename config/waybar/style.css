@@ -9,7 +9,6 @@
 
 window#waybar {
   background: #050505;
-  border: 2px solid #505050;
 }
 
 #workspaces {
@@ -45,6 +44,7 @@ window#waybar {
 #backlight,
 #network,
 #clock,
+#idle_inhibitor,
 #tray {
   padding-right: 24px;
   background-color: transparent;
