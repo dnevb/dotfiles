@@ -1,2 +1,6 @@
+if [ -f $HOME/.credentials ]; then
+	. $HOME/.credentials
+fi
 PATH=$PATH:$HOME/.bun/bin
+PATH=$PATH:$HOME/.local/bin
 eval "$(direnv hook zsh)"
