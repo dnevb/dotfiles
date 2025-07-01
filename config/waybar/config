@@ -6,7 +6,7 @@
     "margin-right": 0,
 
     "modules-left": [
-        "sway/workspaces"
+        "niri/workspaces"
     ],
 
     "modules-center": [
@@ -29,24 +29,17 @@
         "tooltip-format": "{title}"
     },
 
-    "sway/workspaces": {
+    "niri/workspaces": {
         "disable-scroll": true,
         "all-outputs": true,
         "format": "{icon}",
         "format-icons": {
-            "1": "",
-            "2": "",
-            "3": "",
-            "8": "",
-            "9": "󰓓",
-            "10": "",
-        },
-        "persistent-workspaces": {
-            "1": [],
-            "2": [],
-            "8": [],
-            "9": [],
-            "10": [],
+            "music": "",
+            "term": "",
+            "editor": "",
+            "media": "",
+            "game": "󰓓",
+            "web": "",
         }
     },
 

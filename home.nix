@@ -4,8 +4,7 @@
   home.username = "dvill";
   home.homeDirectory = "/home/dvill";
 
-  home.stateVersion = "24.11"; # Please read the comment before changing.
-
+  home.stateVersion = "25.05";
 	nixGL.packages = nixGL.packages;
 
   home.packages = [
@@ -14,17 +13,16 @@
 		pkgs.neovim
 		pkgs.helix
 		pkgs.go
-		pkgs.nodejs_23
 		pkgs.cargo
 		pkgs.lazygit
 		pkgs.direnv
 		pkgs.yazi
+		pkgs.gamescope
+		pkgs.swww
   ];
 
   home.file = {};
 	xdg.configFile = {
-		"nvim/lua".source = config.lib.file.mkOutOfStoreSymlink ./config/nvim/lua;
-		"nvim/init.lua".source = config.lib.file.mkOutOfStoreSymlink ./config/nvim/init.lua;
 		"kitty".source = config.lib.file.mkOutOfStoreSymlink ./config/kitty;
 		"helix".source = config.lib.file.mkOutOfStoreSymlink ./config/helix;
 		"niri".source = config.lib.file.mkOutOfStoreSymlink ./config/niri;
@@ -38,7 +36,7 @@
 
   home.sessionVariables = {
     EDITOR = "hx";
-		ZSH_TMUX_AUTOSTART = "true";
+    DISPLAY = ":0";
   };
 
   programs.home-manager.enable = true;
@@ -83,28 +81,5 @@
 		enable = true;
 		package = (config.lib.nixGL.wrap pkgs.alacritty);
 		settings = builtins.fromTOML (builtins.readFile ./config/alacritty/alacritty.toml);
-	};
-	programs.ghostty = {
-		enable = true;
-		package = (config.lib.nixGL.wrap pkgs.ghostty);
-	};
-	programs.tmux = {
-		enable = false;
-		escapeTime = 0;
-		baseIndex = 1;
-		disableConfirmationPrompt = true;
-		prefix = "C-space";
-    terminal = "tmux-256color";
-		shell = "${pkgs.zsh}/bin/zsh";
-		extraConfig = builtins.readFile ./config/tmux/tmux.conf;
-		keyMode = "vi";
-		mouse = true;
-		sensibleOnTop = true;
-		customPaneNavigationAndResize = true;
-		plugins = [
-			{
-				plugin = pkgs.tmuxPlugins.vim-tmux-navigator;
-			}
-		];
 	};
 }

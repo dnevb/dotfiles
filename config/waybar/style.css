@@ -26,7 +26,7 @@ window#waybar {
   color: #6c757d;
 }
 
-#workspaces button.visible {
+#workspaces button.active {
   color: #ede0d4;
 }
 

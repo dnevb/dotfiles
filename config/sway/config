@@ -96,9 +96,8 @@ bindsym $mod+b splith
 bindsym $mod+v splitv
 
 # Switch the current container between different layout styles
-bindsym $mod+s layout stacking
+bindsym $mod+s layout toggle split
 bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
 
 # Make the current focus fullscreen
 bindsym $mod+f fullscreen
@@ -123,6 +122,8 @@ bindsym $mod+minus scratchpad show
 #
 # Resizing containers:
 #
+# bindsym $mod+r resize set 35 ppt 100 ppt
+# bindsym $mod+Shift+r resize set 65 ppt 100 ppt
 mode "resize" {
     # left will shrink the containers width
     # right will grow the containers width
@@ -143,7 +144,6 @@ mode "resize" {
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
-bindsym $mod+r exec --no-startup-id ~/.config/sway/resize.sh
 #
 # Utilities:
 #
