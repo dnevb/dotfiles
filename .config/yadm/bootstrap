@@ -11,4 +11,4 @@ if [ -f "$HOME/.Brewfile" ]; then
   brew bundle --global
 fi
 
-brew install helix gemini-cli xsel yazi fzf zoxide neovim
+brew install helix gemini-cli xsel yazi fzf zoxide neovim lazygit
