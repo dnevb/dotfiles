@@ -1,0 +1,16 @@
+[language-server.typescript-language-server]
+# command = "tsgo"
+# args = ["--lsp","--stdio"]
+command = "typescript-language-server"
+args = ["--stdio"]
+config.hostInfo = "helix"
+
+# [language-server.typescript-language-server.config.typescript]
+# updateImportsOnFileMove.enabled = "always"
+# inlayHints.parameterTypes.enabled = true
+# inlayHints.variableTypes.enabled = true
+# inlayHints.propertyDeclarationTypes.enabled = true
+# inlayHints.functionLikeReturnTypes.enabled = true
+# inlayHints.enumMemberValues.enabled = true
+# inlayHints.parameterNames.enabled = "literals"
+# referencesCodeLens.enabled = true
