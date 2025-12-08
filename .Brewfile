@@ -1,0 +1,17 @@
+
+brew "helix"
+brew "xsel"
+brew "yazi"
+brew "zoxide"
+brew "neovim"
+brew "lazygit"
+brew "ripgrep"
+brew "eza"
+brew "bat"
+brew "git"
+brew "jq"
+
+tap "charmbracelet/tap"
+brew "crush"
+tap "oven-sh/bun"
+brew "bun"
