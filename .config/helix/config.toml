@@ -1,6 +1,7 @@
 theme = "flexoki_dark"
 
 [editor]
+scrolloff = 1
 bufferline = "always"
 scroll-lines = 2
 soft-wrap.enable = true
