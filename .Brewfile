@@ -1,4 +1,3 @@
-
 brew "helix"
 brew "xsel"
 brew "yazi"
@@ -10,8 +9,7 @@ brew "eza"
 brew "bat"
 brew "git"
 brew "jq"
+brew "fzf"
 
-tap "charmbracelet/tap"
-brew "crush"
 tap "oven-sh/bun"
 brew "bun"
