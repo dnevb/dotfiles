@@ -1,0 +1,5 @@
+[general]
+import = ['./theme']
+
+[font]
+size=14

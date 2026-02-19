@@ -10,6 +10,7 @@ brew "bat"
 brew "git"
 brew "jq"
 brew "fzf"
+brew "tmux"
 
 tap "oven-sh/bun"
 brew "bun"
