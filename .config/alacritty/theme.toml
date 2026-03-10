@@ -1,39 +1,32 @@
-[colors.bright]
-black = "0x100F0F"
-blue = "0x4385BE"
-cyan = "0x3AA99F"
-green = "0x879A39"
-magenta = "0xCE5D97"
-red = "0xD14D41"
-white = "0xFFFCF0"
-yellow = "0xD0A215"
+# iterm2 pastel dark
+[colors.primary]
+background = '#000000'
+foreground = '#bbbbbb'
 
 [colors.cursor]
-cursor = "0xFFFCF0"
-text = "0xFFFCF0"
+text = '#ffffff'
+cursor = '#ffa560'
 
-[colors.dim]
-black = "0x100F0F"
-blue = "0x205EA6"
-cyan = "0x24837B"
-green = "0x66800B"
-magenta = "0xA02F6F"
-red = "0xAF3029"
-white = "0xFFFCF0"
-yellow = "0xAD8301"
+[colors.selection]
+text = '#f1f1f1'
+background = '#353883'
 
 [colors.normal]
-black = "0x100F0F"
-blue = "0x205EA6"
-cyan = "0x24837B"
-green = "0x66800B"
-magenta = "0xA02F6F"
-red = "0xAF3029"
-white = "0xFFFCF0"
-yellow = "0xAD8301"
+black   = '#4f4f4f'
+red     = '#ff6c60'
+green   = '#a8ff60'
+yellow  = '#ffffb6'
+blue    = '#96cbfe'
+magenta = '#ff73fd'
+cyan    = '#c6c5fe'
+white   = '#eeeeee'
 
-[colors.primary]
-background = "0x282726"
-bright_foreground = "0xFFFCF0"
-dim_foreground = "0xFFFCF0"
-foreground = "0xFFFCF0"
+[colors.bright]
+black   = '#7c7c7c'
+red     = '#ffb6b0'
+green   = '#ceffcf'
+yellow  = '#ffffcc'
+blue    = '#b5dcff'
+magenta = '#ff9cfe'
+cyan    = '#dfdfdf'
+white   = '#ffffff'

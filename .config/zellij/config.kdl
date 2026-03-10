@@ -1,0 +1,38 @@
+default_layout "compact"
+
+ui {
+    pane_frames {
+        hide_session_name true
+    }
+}
+show_startup_tips false
+show_release_notes false
+simplified_ui true
+theme "ansi"
+
+plugins {
+    tab-bar location="zellij:tab-bar"
+    status-bar location="zellij:status-bar"
+    strider location="zellij:strider"
+    compact-bar location="zellij:compact-bar"
+    session-manager location="zellij:session-manager"
+    welcome-screen location="zellij:session-manager" {
+        welcome_screen true
+    }
+    filepicker location="zellij:strider" {
+        cwd "/"
+    }
+    configuration location="zellij:configuration"
+    plugin-manager location="zellij:plugin-manager"
+    about location="zellij:about"
+}
+
+load_plugins {
+}
+
+web_client {
+    font "monospace"
+}
+
+
+
