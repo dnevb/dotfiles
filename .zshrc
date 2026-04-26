@@ -20,5 +20,7 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 # aliases
 alias lg="lazygit"
 alias cat="bat"
+alias ze="zellij"
 
 source $ZSH/oh-my-zsh.sh
+
