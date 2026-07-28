@@ -1,1 +1,4 @@
 theme = iTerm2 Pastel Dark Background
+font-family = GeistMono Nerd Font Mono
+font-size = 16
+copy-on-select = clipboard

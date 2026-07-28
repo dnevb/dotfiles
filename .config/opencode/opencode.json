@@ -1,13 +1,5 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "plugin": [
-    "context-mode",
-    "@dietrichgebert/ponytail"
-  ],
-  "permission": {
-    "edit": "ask",
-    "bash": "ask"
-  },
   "tools": {
     "todowrite": false
   },
@@ -21,7 +13,7 @@
       "enabled": true,
       "type": "local",
       "command": [
-        "/Users/dan/.local/bin/codebase-memory-mcp"
+        "/Users/daniel/.local/bin/codebase-memory-mcp"
       ]
     }
   }
